@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom"
 import { AuthRoutes } from "../auth/routes/AuthRoutes"
-import { GymPage } from "../gym/pages/GymPage"
+import { GymRoutes } from "../gym/routes/GymRoutes"
 
 export const AppRouter = () => {
   return (
     <Routes>
-        <Route path="/*" element={<GymPage/>}/>
+        <Route path="/*" element={<GymRoutes/>}/>
         <Route path="/auth/*" element={<AuthRoutes/>}/>
     </Routes>
   )
