@@ -1,10 +1,12 @@
-import { Navbar } from "../components/Navbar";
+import { Navbar } from '../components/Navbar';
+import Fondo from '../../assets/images/fondo.jpg';
 
 export const GymPage = () => {
   return (
     <>
-      <h1 className="text-center">GymPage</h1>
-      <Navbar/>
+      <h1 className="text-center">Zona GYM</h1>
+      <Navbar />
+      <img className="container d-flex" src={Fondo} alt="" />
     </>
   );
 };

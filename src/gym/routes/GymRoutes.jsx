@@ -8,6 +8,7 @@ export const GymRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<GymPage />} />
+      <Route path="/*" element={<GymPage />} />
 
       <Route path="/maquinas" element={<Maquinas />} />
       <Route path="/calistenia" element={<Calistenia />} />
