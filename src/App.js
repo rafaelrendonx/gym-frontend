@@ -1,7 +1,10 @@
-import { AppRouter } from "./router/AppRouter"
+import { DataProvider } from './context/DataContext';
+import { AppRouter } from './router/AppRouter';
 
 export const App = () => {
   return (
-    <AppRouter/>
-  )
-}
+    <DataProvider>
+      <AppRouter />
+    </DataProvider>
+  );
+};
