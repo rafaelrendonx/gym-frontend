@@ -16,13 +16,24 @@ export const Calistenia = () => {
       </button>
       {calisteniaData.map((equipo) => {
         return (
-          <div key={equipo.nombre}>
-            <h5>Nombre:{equipo.nombre}</h5>
-            <p>Descripcion: {equipo.descripcion}</p>
-            <p>Id: {equipo.id}</p>
-            <p>Precio:${equipo.precio}</p>
-            <img src={equipo.imagen} alt="imagenEquipo" />
+          <div key={equipo.id} className="card m-3" style={{maxWidth:'640px'}}>
+          <div className="row g-0">
+            <div id='zoom' className="col-md-4 border border-secondary">
+              <img src={equipo.imagen}  className="img-fluid rounded-start " alt="imagenEquipo" />
+            </div>
+            <div className="col-md-8">
+              <div className="card-body">
+                <h5 className="card-title">{equipo.nombre}</h5>
+                <p className="card-text">
+                  {equipo.descripcion}
+                </p>
+                <p className="card-text">
+                  <small className="text-muted">${equipo.precio} MXN</small>
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
         );
       })}
     </>
