@@ -59,9 +59,9 @@ export const LoginPage = () => {
                   </button>
                 </form>
                 <span>
-                  Aun no tienes cuenta?
+                  ¿Aún no tienes cuenta?
                   <button onClick={goToRegister} className="btn btn-link mt-3">
-                    Haz click aqui
+                    Haz click aquí
                   </button>
                 </span>
               </div>

@@ -4,6 +4,7 @@ import { DataContext } from '../../context/DataContext';
 
 export const Calistenia = () => {
   const { calisteniaData } = useContext(DataContext);
+  console.log(calisteniaData)
   const navigate = useNavigate();
   return (
     <>

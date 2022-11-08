@@ -1,68 +1,48 @@
 import { Navbar } from '../components/Navbar';
-import Fondo from '../../assets/images/fondo.jpg';
 
 export const GymPage = () => {
+
   return (
     <>
-      <h1 className="text-center">Zona GYM</h1>
       <Navbar />
-      <img
-        className="container-fluid rounded-5"
-        src={Fondo}
-        alt="imagenFondo"
-        loading="lazy"
-      />
-      <h5>Conoce nuestros productos</h5>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
+
+      <section className='imagen-fondo'>
+        <div className='contenido-fondo'>
+          <h1>Gym Zone</h1>
+          <p>Todo el equipamiento que necesitas para tu gimnasio.</p>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
+      </section>
+
+      <section>
+
+        <div className="row row-cols-1 row-cols-lg-3 align-items-stretch">
+
+
+          <div className="bg-image hover-overlay ripple shadow-1-strong d-flex flex-column h-100 text-white text-shadow-1 content">
+            <img src="https://media.revistagq.com/photos/61a7607b21a47a71e216357f/16:9/w_1920,c_limit/GettyImages-1125840227.jpg" className="h-100 overflow-hidden text-bg-dark shadow-lg content-image" alt="..." />
           </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
+
+
+
+          <div className="bg-image hover-overlay ripple shadow-1-strong d-flex flex-column h-100 text-white text-shadow-1 content">
+            <img src='https://media.gq.com.mx/photos/61fbe7e4c981b856e369749e/16:9/w_1920,c_limit/calistenia.jpg' className="h-100 overflow-hidden text-bg-dark shadow-lg content-image" alt="..." />
           </div>
+
+
+
+          <div className="bg-image hover-overlay ripple shadow-1-strong d-flex flex-column h-100 text-white text-shadow-1 content">
+            <img src="https://mundoentrenamiento.com/wp-content/uploads/2021/06/Weightlifting-1.jpg" className="h-100 overflow-hidden text-bg-dark shadow-lg content-image" alt="..." />
+          </div>
+
+
+
         </div>
-      </div>
+      </section>
+
+
+      <footer>
+        <p>Todos los derechos reservados. Gym Zone.</p>
+      </footer>
     </>
   );
 };

@@ -66,7 +66,7 @@ export const RegisterPage = () => {
                   </button>
                 </form>
                 <span className="">
-                  Ya tienes una cuenta?
+                  ¿Ya tienes una cuenta?
                   <button
                     onClick={() => navigate('/auth/login')}
                     className="btn btn-link"
