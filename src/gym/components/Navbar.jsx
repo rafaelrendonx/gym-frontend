@@ -40,10 +40,10 @@ export const Navbar = () => {
                 </li>
                 <li className="nav-item dropdown">
                   <p className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Equipamiento
+                    Venta de Equipo
                   </p>
                   <ul className="dropdown-menu dropdown-menu-dark">
-                    <li><a className="dropdown-item" onClick={navigateTo} name="maquinas">Maquinas</a></li>
+                    <li><a className="dropdown-item" onClick={navigateTo} name="maquinas">Máquinas</a></li>
                     <li>
                       <hr className="dropdown-divider" />
                     </li>

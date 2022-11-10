@@ -37,42 +37,109 @@
 
 p {
   color: white;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.card img {
-  height: 480px;
-  width: 800px;
+.container {
+  position: relative;
+  padding: 0;
 }
 
-
-.content .content-overlay {
-  background: rgba(0, 0, 0, 0.7);
-  position: unset;
-  height: 99%;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.4s ease-in-out 0s;
-}
-
-.content:hover .content-overlay {
+.image {
   opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 
-.content-details {
-  position: unset;
-  text-align: center;
-  width: 100%;
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
   top: 50%;
   left: 50%;
-  opacity: 0;
   transform: translate(-50%, -50%);
-  transition: all 0.3s ease-in-out 0s;
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-.content:hover .content-details {
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
   opacity: 1;
 }
 
-.content-details h3 {
-  color: #fff;
+.text {
+  font-weight: bold;
+  color: white;
+  font-size: 32px;
+  padding: 16px 32px;
+}
+
+.footer p {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 500px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.equipo h2,
+.equipo p {
+
+  color: white;
+
+}
+
+.equipo p {
+  font-size: 1rem;
+}
+
+.btn-dark {
+  border-color: white;
+}
+
+.bg-transparent:hover {
+  color: white;
 }
