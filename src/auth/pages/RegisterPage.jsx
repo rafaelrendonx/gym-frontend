@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
+import { startRegistro } from '../../hooks/useAuth';
 
 export const RegisterPage = () => {
   const formValues = {
     nombre: '',
-    email: '',
+    correo: '',
     password: '',
   };
-  const { formState, onInputChange, email, password, nombre } =
+  const { formState, onInputChange, correo, password, nombre } =
     useForm(formValues);
   const [registeredUser, setRegisteredUser] = useState({});
   const navigate = useNavigate();
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setRegisteredUser([formState]);
-    console.log(registeredUser);
+    startRegistro({ nombre, correo, password });
+    console.log(startRegistro);
   };
   return (
     <>
@@ -44,11 +45,11 @@ export const RegisterPage = () => {
                   <div className="form-outline mb-4">
                     <input
                       placeholder="Correo@hotmail.com"
-                      name="email"
+                      name="correo"
                       className="form-control form-control-lg"
                       type="text"
                       onChange={onInputChange}
-                      value={email}
+                      value={correo}
                     />
                   </div>
                   <div className="form-outline mb-4">

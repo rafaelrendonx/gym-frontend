@@ -1,19 +1,20 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
+import { startLogin } from '../../hooks/useAuth';
 
 export const LoginPage = () => {
   const formValues = {
-    email: '',
+    correo: '',
     password: '',
   };
-  const { formState, onInputChange, email, password } = useForm(formValues);
+  const { formState, onInputChange, correo, password } = useForm(formValues);
   const [loggedUser, setLoggedUser] = useState({});
   const navigate = useNavigate();
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setLoggedUser([formState]);
+    startLogin({correo, password});
     console.log(loggedUser);
   };
 
@@ -37,11 +38,11 @@ export const LoginPage = () => {
                   <div className="form-outline mb-4">
                     <input
                       placeholder="Correo@hotmail.com"
-                      name="email"
+                      name="correo"
                       className="form-control form-control-lg"
                       type="text"
                       onChange={onInputChange}
-                      value={email}
+                      value={correo}
                     />
                   </div>
                   <div className="form-outline mb-4">

@@ -44,7 +44,7 @@ export const Main = () => {
                             <img src="https://mundoentrenamiento.com/wp-content/uploads/2021/06/Weightlifting-1.jpg" className="image h-100 overflow-hidden text-bg-dark shadow-lg content-image" alt="..." onClick={navigateTo} name="pesas" />
                         </div>
                         <div className="middle">
-                            <button className='btn bg-transparent text' onClick={navigateTo} name="pesas">Pesas</button>
+                            <button className='btn btn-outline-danger bg-transparent text' onClick={navigateTo} name="pesas">Pesas</button>
                         </div>
                     </div>
 

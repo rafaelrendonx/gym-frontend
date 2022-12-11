@@ -143,3 +143,11 @@ p {
 .bg-transparent:hover {
   color: white;
 }
+
+.btn-outline-danger {
+  border-color: aqua;
+}
+
+.btn-outline-danger:hover {
+  border-color: green;
+}
