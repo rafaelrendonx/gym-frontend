@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { Calistenia } from '../pages/Calistenia'
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "../routes";
 
 export const Main = () => {
 
@@ -26,7 +28,7 @@ export const Main = () => {
                             <img src="https://media.revistagq.com/photos/61a7607b21a47a71e216357f/16:9/w_1920,c_limit/GettyImages-1125840227.jpg" className="image h-100 overflow-hidden text-bg-dark shadow-lg content-image" alt="..." onClick={navigateTo} name="maquinas" />
                         </div>
                         <div className="middle">
-                        <button className='btn bg-transparent text' onClick={navigateTo} name="pesas">Máquinas</button>
+                        <button className='btn bg-transparent text' onClick={navigateTo} name="maquinas">Máquinas</button>
                         </div>
                     </div>
 
@@ -35,7 +37,7 @@ export const Main = () => {
                             <img src="https://media.gq.com.mx/photos/61fbe7e4c981b856e369749e/16:9/w_1920,c_limit/calistenia.jpg" className="image h-100 overflow-hidden text-bg-dark shadow-lg content-image" alt="..." onClick={navigateTo} name="calistenia" />
                         </div>
                         <div className="middle">
-                        <button className='btn bg-transparent text' onClick={navigateTo} name="pesas">Calistenia</button>
+                        <button className='btn bg-transparent text' onClick={navigateTo} name="calistenia">Calistenia</button>
                         </div>
                     </div>
 

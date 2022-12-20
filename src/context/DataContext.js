@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
+
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
@@ -9,19 +10,19 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get('https://gym-backend.vercel.app/equipamiento/calistenia')
+      .get('https://gym-ashy.vercel.app/equipamiento/calistenia')
       .then((response) => setCalisteniaData(response.data));
   }, []);
 
   useEffect(() => {
     axios
-      .get('https://gym-backend.vercel.app/equipamiento/maquinas')
+      .get('https://gym-ashy.vercel.app/equipamiento/maquinas')
       .then((response) => setMaquinasData(response.data));
   }, []);
 
   useEffect(() => {
     axios
-      .get('https://gym-backend.vercel.app/equipamiento/pesas')
+      .get('https://gym-ashy.vercel.app/equipamiento/pesas')
       .then((response) => setPesasData(response.data));
   }, []);
 

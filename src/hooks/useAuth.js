@@ -1,19 +1,44 @@
 import axios from "axios"
 
-export const startLogin = async ({ correo, password }) => {
+export const startRegister = async (userInfo) => {
     try {
-        const respuesta = await axios.post('https://gym-backend.vercel.app/usuarios/login', { correo, password })
-        console.log(respuesta)
+        const {
+            data: {
+                detalles: { token, userId },
+            },
+        } = await axios.post('https://gym-ashy.vercel.app/auth/register', userInfo)
+        localStorage.setItem("token", token)
+        localStorage.setItem("userId", userId)
+        return { token, userId }
     } catch (error) {
-        console.log(error)
+        return { error: error.response.data.detalles }
     }
 }
 
-export const startRegistro = async ({ nombre, correo, password }) => {
+export const startLogin = async (userInfo) => {
     try {
-        const respuesta = await axios.post('https://gym-backend.vercel.app/usuarios/registro', { nombre, correo, password })
-        console.log(respuesta)
+        const {
+            data: {
+                detalles: { token, userId },
+            },
+        } = await axios.post('https://gym-ashy.vercel.app/auth/login', userInfo)
+        localStorage.setItem("token", token)
+        localStorage.setItem("userId", userId)
+        return { token, userId }
     } catch (error) {
-        console.log(error)
+        return { error: error.response.data.detalles }
+    }
+}
+
+export const getUserData = async (correo) => {
+    try {
+        const { data } = await axios.get(`https://gym-ashy.vercel.app/usuarios/getuserdata?correo=${correo}`, 
+        { headers: {
+            authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+    })
+        return data
+    } catch (error) {
+        return { error: error.response.data.detalles }
     }
 }

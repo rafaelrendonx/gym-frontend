@@ -1,10 +1,17 @@
+import './App.css';
+import { AppRouter } from './routes/AppRouter';
+import { UserProvider } from './context/UserContext';
 import { DataProvider } from './context/DataContext';
-import { AppRouter } from './router/AppRouter';
+import { CarritoProvider } from './context/CarritoContext'
 
 export const App = () => {
   return (
-    <DataProvider>
-      <AppRouter />
-    </DataProvider>
+    <UserProvider>
+      <DataProvider>
+        <CarritoProvider>
+          <AppRouter />
+        </CarritoProvider>
+      </DataProvider>
+    </UserProvider>
   );
 };

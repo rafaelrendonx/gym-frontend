@@ -1,23 +1,27 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from '../../hooks/useForm';
-import { startRegistro } from '../../hooks/useAuth';
+import { startRegister } from '../hooks/useAuth';
+import { UserContext } from '../context/UserContext'
 
 export const RegisterPage = () => {
-  const formValues = {
-    nombre: '',
-    correo: '',
-    password: '',
-  };
-  const { formState, onInputChange, correo, password, nombre } =
-    useForm(formValues);
-  const [registeredUser, setRegisteredUser] = useState({});
+  const [errorMessage, setErrorMessage] = useState(null);
+  const { saveToken, saveUserId } = useContext(UserContext)
   const navigate = useNavigate();
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
-    startRegistro({ nombre, correo, password });
-    console.log(startRegistro);
+    setErrorMessage(null);
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    const { token, userId, error } = await startRegister(data);
+    console.log(formData)
+    if (error) {
+      setErrorMessage(error);
+    } else {
+      saveToken(token);
+      saveUserId(userId);
+      event.target.reset();
+    }
   };
   return (
     <>
@@ -37,8 +41,6 @@ export const RegisterPage = () => {
                       name="nombre"
                       className="form-control form-control-lg"
                       type="text"
-                      onChange={onInputChange}
-                      value={nombre}
                     />
                   </div>
 
@@ -48,8 +50,6 @@ export const RegisterPage = () => {
                       name="correo"
                       className="form-control form-control-lg"
                       type="text"
-                      onChange={onInputChange}
-                      value={correo}
                     />
                   </div>
                   <div className="form-outline mb-4">
@@ -58,20 +58,13 @@ export const RegisterPage = () => {
                       name="password"
                       className="form-control form-control-lg"
                       type="password"
-                      onChange={onInputChange}
-                      value={password}
                     />
                   </div>
-                  <button type="submit" className="btn btn-primary">
-                    Registrarme
-                  </button>
+                  <button type="submit" className="btn btn-primary">Registrarme</button>
                 </form>
                 <span className="">
                   ¿Ya tienes una cuenta?
-                  <button
-                    onClick={() => navigate('/auth/login')}
-                    className="btn btn-link"
-                  >
+                  <button onClick={() => navigate('/auth/login')} className="btn btn-link">
                     Ingresa con tu usuario
                   </button>
                 </span>
