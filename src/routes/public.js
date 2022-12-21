@@ -5,7 +5,7 @@ import { Main } from '../components/Main'
 export const PUBLIC_ROUTES = [
   {
     path: "/",
-    title: "Public Home",
+    title: "Home",
     element: <Main />,
   },
 

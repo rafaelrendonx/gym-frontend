@@ -1,4 +1,5 @@
 import './App.css';
+import './assets/styles/main.css'
 import { AppRouter } from './routes/AppRouter';
 import { UserProvider } from './context/UserContext';
 import { DataProvider } from './context/DataContext';

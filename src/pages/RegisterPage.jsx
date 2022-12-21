@@ -29,7 +29,7 @@ export const RegisterPage = () => {
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-              <div className="card shadow-2-strong border border-secondary mb-5">
+              <div className="card shadow-2-strong border border-secondary mb-5  text-bg-dark">
                 <form
                   onSubmit={onSubmit}
                   className="d-flex flex-column mb-3 align-items-center mt-5"
@@ -60,14 +60,14 @@ export const RegisterPage = () => {
                       type="password"
                     />
                   </div>
-                  <button type="submit" className="btn btn-primary">Registrarme</button>
+                  <button type="submit" className="btn btn-dark">Registrarme</button>
                 </form>
-                <span className="">
-                  ¿Ya tienes una cuenta?
-                  <button onClick={() => navigate('/auth/login')} className="btn btn-link">
-                    Ingresa con tu usuario
-                  </button>
-                </span>
+
+                <div className='text-center'>
+                  <p>¿Ya tienes una cuenta?</p>
+                  <button onClick={() => navigate('/auth/login')} className="btn btn-dark mb-5">Ingresa con tu usuario</button>
+                </div>
+
               </div>
             </div>
           </div>

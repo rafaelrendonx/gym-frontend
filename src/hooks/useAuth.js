@@ -4,12 +4,13 @@ export const startRegister = async (userInfo) => {
     try {
         const {
             data: {
-                detalles: { token, userId },
+                detalles: { token, userId, nombre },
             },
-        } = await axios.post('https://gym-ashy.vercel.app/auth/register', userInfo)
+        } = await axios.post('https://gym-backend.vercel.app/auth/register', userInfo)
         localStorage.setItem("token", token)
         localStorage.setItem("userId", userId)
-        return { token, userId }
+        localStorage.setItem("nombre", nombre)
+        return { token, userId, nombre }
     } catch (error) {
         return { error: error.response.data.detalles }
     }
@@ -19,25 +20,13 @@ export const startLogin = async (userInfo) => {
     try {
         const {
             data: {
-                detalles: { token, userId },
+                detalles: { token, userId, nombre },
             },
-        } = await axios.post('https://gym-ashy.vercel.app/auth/login', userInfo)
+        } = await axios.post('https://gym-backend.vercel.app/auth/login', userInfo)
         localStorage.setItem("token", token)
         localStorage.setItem("userId", userId)
-        return { token, userId }
-    } catch (error) {
-        return { error: error.response.data.detalles }
-    }
-}
-
-export const getUserData = async (correo) => {
-    try {
-        const { data } = await axios.get(`https://gym-ashy.vercel.app/usuarios/getuserdata?correo=${correo}`, 
-        { headers: {
-            authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-    })
-        return data
+        localStorage.setItem("nombre", nombre)
+        return { token, userId, nombre }
     } catch (error) {
         return { error: error.response.data.detalles }
     }

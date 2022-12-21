@@ -1,4 +1,9 @@
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext'
+
 export const ProfilePage = () => {
+
+  const { nombre } = useContext(UserContext);
 
   return (
 
@@ -6,7 +11,7 @@ export const ProfilePage = () => {
 
       <h2 className='text-center mt-4'>Mi Perfil</h2>
 
-      <p className='text-center mt-4'>Bienvenido, Usuario</p>
+      <p className='text-center mt-4'>Bienvenido, {nombre}</p>
       
 
     </div>

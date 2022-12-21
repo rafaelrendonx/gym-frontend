@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { UserContext } from "../context/UserContext";
 import { Nav } from '../components/Nav';
+import { Footer } from '../components/Footer'
 import { PRIVATE_ROUTES, PUBLIC_ROUTES, EQUIPMENT_ROUTES } from "../routes";
 
 export const AppRouter = () => {
@@ -10,7 +11,6 @@ export const AppRouter = () => {
   return (
     <>
       <Nav />
-      
       <Routes>
         {(!token ? PUBLIC_ROUTES : PRIVATE_ROUTES).map((route, index) => (
           <Route key={index} {...route} />
@@ -22,6 +22,7 @@ export const AppRouter = () => {
           <Route path="*" element={<Navigate to="/" />} />
         )}
       </Routes>
+      <Footer />
     </>
   )
 }

@@ -10,18 +10,18 @@ export const PRIVATE_ROUTES = [
         element: <Main />,
     },
     {
+        path: "/carrito",
+        title: "Mi Carrito",
+        element: <CarritoPage />,
+    },
+    {
         path: "/profile",
-        title: "Profile",
+        title: "Mi Perfil",
         element: <ProfilePage />,
     },
     {
         path: "/logout",
         title: "Logout",
         element: <LogoutPage />,
-    },
-    {
-        path: "/carrito",
-        title: "Carrito",
-        element: <CarritoPage />,
     },
 ]
