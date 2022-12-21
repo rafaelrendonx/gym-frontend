@@ -5,7 +5,7 @@ import { UserContext } from '../context/UserContext'
 
 export const RegisterPage = () => {
   const [errorMessage, setErrorMessage] = useState(null);
-  const { saveToken, saveUserId } = useContext(UserContext)
+  const { saveToken, saveUserId, saveNombre } = useContext(UserContext)
   const navigate = useNavigate();
 
   const onSubmit = async (event) => {
@@ -13,13 +13,14 @@ export const RegisterPage = () => {
     setErrorMessage(null);
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    const { token, userId, error } = await startRegister(data);
+    const { token, userId, nombre, error } = await startRegister(data);
     console.log(formData)
     if (error) {
       setErrorMessage(error);
     } else {
       saveToken(token);
       saveUserId(userId);
+      saveNombre(nombre);
       event.target.reset();
     }
   };
