@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../assets/styles/main.css'
 import Logo from '../assets/images/logo.jpg'
 import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "../routes";
@@ -19,9 +19,10 @@ export const Nav = () => {
             <nav className="navbar navbar-dark custom-color">
                 <div className="container-fluid">
                     <div>
-                        <a href='foo' className="navbar-brand">
+                        <Link to="/Main" className="navbar-brand">
                             <img src={Logo} alt="Logo" width="50" height="50" className="d-inline-block logo" />
-                            Gym Zone </a>
+                            Gym Zone
+                        </Link>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                         <span className="navbar-toggler-icon"></span>
@@ -49,7 +50,7 @@ export const Nav = () => {
                                         <li>
                                             <hr className="dropdown-divider" />
                                         </li>
-                                        <li><a className="dropdown-item" onClick={navigateTo} name="Calistenia">Calistenia</a></li>
+                                        <li><a className="dropdown-item" onClick={navigateTo} name="calistenia">Calistenia</a></li>
                                         <li>
                                             <hr className="dropdown-divider" />
                                         </li>
